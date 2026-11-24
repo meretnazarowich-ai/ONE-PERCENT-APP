@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#0b0f1a">
+<title>ONE PERCENT</title>
+<style>
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{background:#0b0f1a;color:#fff;font-family:system-ui,sans-serif;padding:20px}
+  h1{font-size:28px;letter-spacing:2px}
+  h1 span{color:#00e08a}
+  .sub{color:#8b93a7;margin:6px 0 24px}
+  .grid{display:grid;gap:14px}
+  .card{background:linear-gradient(135deg,#161d31,#1d2640);border:1px solid #2a3556;border-radius:18px;padding:18px;display:flex;align-items:center;gap:16px}
+  .card:active{transform:scale(.97)}
+  .hero{font-size:42px}
+  .info{flex:1}
+  .card h2{font-size:18px}
+  .card p{color:#8b93a7;font-size:13px;margin-top:4px}
+  .lvl{margin-top:10px;height:6px;background:#2a3556;border-radius:6px;overflow:hidden}
+  .lvl div{height:100%;width:10%;background:#00e08a}
+</style>
+</head>
+<body>
+<h1>ONE <span>PERCENT</span></h1>
+<p class="sub">Становись лучше на 1% каждый день</p>
+<div class="grid" id="grid"></div>
+
+<script>
+const sections = [
+  {hero:"🦊", title:"Заработок", text:"ИИ, фриланс, крипта"},
+  {hero:"🦁", title:"Мужчина", text:"Стиль, тело, здоровье"},
+  {hero:"🦉", title:"Психология", text:"Мышление и отношения"},
+  {hero:"🐬", title:"Языки", text:"Речь и произношение"},
+  {hero:"🐘", title:"Финансы", text:"Бюджет и планирование"}
+];
+
+document.getElementById("grid").innerHTML = sections.map(s => `
+  <div class="card" onclick="alert('Раздел «${s.title}» скоро откроется')">
+    <div class="hero">${s.hero}</div>
+    <div class="info">
+      <h2>${s.title}</h2>
+      <p>${s.text}</p>
+      <div class="lvl"><div></div></div>
+    </div>
+  </div>
+`).join("");
+</script>
+</body>
+</html>
